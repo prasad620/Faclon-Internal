@@ -1,0 +1,20 @@
+<!-- @dsCard group="Brand" viewport="700x330" name="Signature graphics" subtitle="Stroke under a title; diagonals in corners only, matched to their ground" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>*{box-sizing:border-box}html,body{margin:0}body{font-family:var(--font-body);background:var(--bg-subtle);padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.lbl{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin:0}
+.board{position:relative;overflow:hidden;border-radius:var(--border-radius-max);height:150px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-end}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tag{position:absolute;top:10px;left:12px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);z-index:2}
+h3{margin:0;font-family:var(--font-heading);font-weight:700;font-size:20px;color:#fff;position:relative;z-index:2}
+</style></head><body>
+<p class="lbl">Signature stroke — under a title</p>
+<div style="background:var(--card-surface);border:1px solid var(--card-border);border-radius:var(--border-radius-max);padding:20px 24px">
+<h3 style="color:var(--card-heading)">Industry 4.0, delivered</h3>
+<img src="../../assets/graphics/signature-gradient-stroke.svg" alt="" style="display:block;width:300px;height:auto;margin-top:6px">
+</div>
+<p class="lbl">Diagonals — corners only, matched to their ground</p>
+<div class="row">
+<div class="board" style="background:var(--brand-blue)"><span class="tag">blue → #1655F2 bg · top-right</span><img src="../../assets/graphics/diagonal-blue.svg" alt="" style="position:absolute;top:0;right:0;width:60%;height:auto;pointer-events:none"><h3>Blue artboard</h3></div>
+<div class="board" style="background:var(--neutral-light-1300)"><span class="tag">dark → #0C1927 bg · bottom-left</span><img src="../../assets/graphics/diagonal-dark.svg" alt="" style="position:absolute;bottom:0;left:0;width:60%;height:auto;transform:scale(-1,-1);pointer-events:none"><h3>Dark artboard</h3></div>
+</div>
+</body></html>

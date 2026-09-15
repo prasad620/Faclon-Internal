@@ -1,0 +1,22 @@
+/* Border radius, border width, elevation and opacity — Figma "styles" page.
+   RADIUS CAP: 10px. No corner in this system is rounder than that — there are no
+   full pills. --border-radius-max resolves to 10px and is an alias, not a larger step. */
+:root{
+  --border-radius-none:0px;--border-radius-xsmall:1px;--border-radius-small:2px;
+  --border-radius-medium:4px;--border-radius-large:8px;
+  --border-radius-max:10px;   /* cap: no radius in this system exceeds 10px */
+
+  --border-width-none:0px;--border-width-thinner:0.5px;--border-width-thin:1px;
+  --border-width-thick:1.5px;--border-width-thicker:2px;
+
+  --opacity-00:0; /* @kind other */--opacity-01:0.09; /* @kind other */--opacity-02:0.12; /* @kind other */--opacity-03:0.18; /* @kind other */--opacity-04:0.24; /* @kind other */
+  --opacity-05:0.32; /* @kind other */--opacity-06:0.48; /* @kind other */--opacity-07:0.56; /* @kind other */--opacity-08:0.64; /* @kind other */--opacity-09:0.72; /* @kind other */
+  --opacity-10:0.80; /* @kind other */--opacity-11:0.88; /* @kind other */--opacity-12:1; /* @kind other */
+
+  --shadow-low-raised:0px 2px 16px 0px rgba(25,40,57,0.09);
+  --shadow-mid-raised:0px 8px 24px 0px rgba(25,40,57,0.12);
+}
+:root[data-theme="dark"], .dark{
+  --shadow-low-raised:0px 2px 16px 0px rgba(12,25,39,0.09);
+  --shadow-mid-raised:0px 8px 24px 0px rgba(12,25,39,0.12);
+}

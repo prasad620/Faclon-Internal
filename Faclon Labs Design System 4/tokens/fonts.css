@@ -1,0 +1,8 @@
+/* Inter — body face. Loaded from Google Fonts (no binaries supplied). */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* TASA Orbiter Display — brand display/heading face. Files supplied by Faclon Labs. */
+@font-face{font-family:"TASA Orbiter Display";src:url("../assets/fonts/TASAOrbiter-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TASA Orbiter Display";src:url("../assets/fonts/TASAOrbiter-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"TASA Orbiter Display";src:url("../assets/fonts/TASAOrbiter-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"TASA Orbiter Display";src:url("../assets/fonts/TASAOrbiter-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"TASA Orbiter Display";src:url("../assets/fonts/TASAOrbiter-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}

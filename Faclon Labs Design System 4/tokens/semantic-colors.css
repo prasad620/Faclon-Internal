@@ -1,0 +1,33 @@
+/* Semantic aliases layered on the Figma Variable set (tokens/figma/fig-tokens.css).
+   Import AFTER fig-tokens.css. */
+:root{
+  /* Brand */
+  --brand-primary:var(--global-colors-chromatic-azure-500);      /* #305EFF */
+  --brand-primary-hover:var(--global-colors-chromatic-azure-300);
+  --brand-primary-wash:var(--global-colors-chromatic-azure-a50);
+
+  /* Page + surface */
+  --surface-page:var(--surface-background-gray-moderate);
+  --surface-card:var(--surface-background-gray-intense);
+  --surface-sunken:var(--surface-background-gray-subtle);
+  --surface-line:var(--surface-border-gray-muted);
+  --surface-line-strong:var(--surface-border-gray-normal);
+
+  /* Text */
+  --text-normal:var(--surface-text-gray-normal);
+  --text-subtle:var(--surface-text-gray-subtle);
+  --text-muted:var(--surface-text-gray-muted);
+  --text-link:var(--surface-text-primary-normal);
+  --text-inverse:var(--surface-text-staticwhite-normal);
+
+  /* Icons */
+  --icon-normal:var(--surface-icon-gray-normal);
+  --icon-brand:var(--surface-icon-primary-normal);
+  --icon-inverse:var(--surface-icon-staticwhite-normal);
+
+  /* Motion */
+  --ease-standard:cubic-bezier(0.5,0,0,1); /* @kind other */
+  --duration-quick:70ms; /* @kind other */
+  --duration-gentle:150ms; /* @kind other */
+  --duration-moderate:250ms; /* @kind other */
+}

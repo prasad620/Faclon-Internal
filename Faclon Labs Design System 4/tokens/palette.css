@@ -1,0 +1,198 @@
+/* Marketing palette — transcribed from the Figma "Colours" page (Light Theme / Dark).
+   This is the brand-facing palette. It is distinct from the product Figma Variables in
+   tokens/figma/fig-tokens.css (which use azure-500 #305EFF); the Colours page is the
+   source of truth for marketing surfaces. */
+:root{
+  /* neutralLight */
+  --neutral-light-000:#FFFFFF;--neutral-light-050:#F8FAFC;--neutral-light-100:#F1F5FA;
+  --neutral-light-200:#E3EAF3;--neutral-light-300:#CBD5E2;--neutral-light-400:#B1C1D2;
+  --neutral-light-500:#90A5BB;--neutral-light-600:#768EA7;--neutral-light-700:#6C849D;
+  --neutral-light-900:#40566D;--neutral-light-1100:#243547;--neutral-light-1300:#0C1927;
+  --neutral-light-a25:rgba(108,132,157,0.06);--neutral-light-a50:rgba(108,132,157,0.09);
+  --neutral-light-a100:rgba(108,132,157,0.18);--neutral-light-a200:rgba(108,132,157,0.32);
+
+  /* azure — brand */
+  --azure-050:#F4F8FF;--azure-100:#DCE8FE;--azure-200:#B8D0FD;--azure-300:#8AB1FB;
+  --azure-400:#5A8DF7;--azure-brand:#165FF2;--azure-600:#124ED0;--azure-700:#0E3FAA;
+  --azure-800:#0A3083;--azure-900:#07215C;--azure-1000:#041438;
+  --azure-a50:rgba(22,95,242,0.09);--azure-a100:rgba(22,95,242,0.18);
+  --azure-a150:rgba(22,95,242,0.24);--azure-a200:rgba(22,95,242,0.32);
+
+  /* Logo blue — the exact blue of the logo, monogram and diagonal artwork (#1655F2).
+     Sits 1 hex digit from --azure-brand (#165FF2, from colours.fig) but is NOT the same
+     value. Use this for surfaces that host DiagonalCorner variant="blue". */
+  --brand-blue:#1655F2;
+
+  /* crimson — negative */
+  --crimson-050:#FFF5F5;--crimson-100:#FEE4E2;--crimson-200:#FEC6C3;--crimson-300:#FD9D96;
+  --crimson-400:#F96C62;--crimson-500:#F04438;--crimson-600:#D92D20;--crimson-700:#B42318;
+  --crimson-800:#9A0E0E;--crimson-900:#880C0C;--crimson-1000:#750A0A;
+  --crimson-a50:rgba(217,45,32,0.09);--crimson-a100:rgba(217,45,32,0.18);
+  --crimson-a150:rgba(217,45,32,0.24);--crimson-a200:rgba(217,45,32,0.32);
+
+  /* emerald — positive */
+  --emerald-050:#EBFAF3;--emerald-100:#DAF5E8;--emerald-200:#B6ECD1;--emerald-300:#91E3BA;
+  --emerald-400:#48D08C;--emerald-500:#00BE5F;--emerald-600:#00A251;--emerald-700:#008743;
+  --emerald-800:#006C36;--emerald-900:#005128;--emerald-1000:#00361B;
+  --emerald-a50:rgba(0,162,81,0.09);--emerald-a100:rgba(0,162,81,0.18);
+  --emerald-a150:rgba(0,162,81,0.24);--emerald-a200:rgba(0,162,81,0.32);
+
+  /* accent — CAPPED AT 10% of any composition. Emphasis only:
+     a highlight, a marker, a single call-out. Never a background or large fill. */
+  --neon-lime:#68DD68;
+
+  /* brand gradients */
+  --gradient-brand:linear-gradient(106.851deg,#0D4AC5 28.07%,#165FF2 96.27%); /* @kind color */
+  --gradient-brand-deep:linear-gradient(75.424deg,#165FF2 -2.42%,#16295C 114.32%); /* @kind color */
+}
+
+/* ── ROLE COLOURS ────────────────────────────────────────────────────
+   Transcribed from the "Colours" file, which assigns each ramp step to a
+   role: Background, Containers, Borders, Text, Buttons. Only the steps
+   listed under a role are legal for that role — the per-role allowed sets
+   are documented in guidelines/colors-roles-light-theme.card.html. */
+:root{
+  /* Background — the page itself. Allowed: neutralLight 000/100/300/500/700/900/1100/1300
+     + a25/a50/a100/a200; azure 100→1000; the two brand gradients. */
+  --bg-default:var(--neutral-light-000);        /* #FFFFFF */
+  --bg-subtle:var(--neutral-light-100);         /* #F1F5FA */
+  --bg-muted:var(--neutral-light-300);          /* #CBD5E2 */
+  --bg-inverse:var(--neutral-light-1300);       /* #0C1927 */
+  --bg-brand:var(--azure-brand);                /* #165FF2 */
+  --bg-brand-subtle:var(--azure-100);           /* #DCE8FE */
+
+  /* Containers — cards, panels, wells. Allowed: neutralLight 100/300/900/1100/1300;
+     azure 050→1000; crimson 100→1000; emerald 100→1000; neon-lime. */
+  --container-default:var(--neutral-light-000);
+  --container-subtle:var(--neutral-light-100);  /* #F1F5FA */
+  --container-muted:var(--neutral-light-300);   /* #CBD5E2 */
+  --container-inverse:var(--neutral-light-1300);
+  --container-brand:var(--azure-050);           /* #F4F8FF */
+  --container-positive:var(--emerald-100);      /* #DAF5E8 */
+  --container-negative:var(--crimson-100);      /* #FEE4E2 */
+
+  /* Borders. Allowed: neutralLight 100/300/900/1100/1300; azure 200/400/Brand/700/1000;
+     crimson 100/600/700; emerald 100/500/900; neon-lime. */
+  --border-subtle:var(--neutral-light-100);     /* #F1F5FA */
+  --border-muted:var(--neutral-light-300);      /* #CBD5E2 */
+  --border-default:var(--neutral-light-300);
+  --border-strong:var(--neutral-light-900);     /* #40566D */
+  --border-inverse:var(--neutral-light-1300);
+  --border-brand:var(--azure-brand);            /* #165FF2 */
+  --border-brand-subtle:var(--azure-200);       /* #B8D0FD */
+  --border-positive:var(--emerald-500);         /* #00BE5F */
+  --border-negative:var(--crimson-600);         /* #D92D20 */
+
+  /* Text. Allowed: neutralLight 300/500/900/1100/1300; azure 200/300/400/Brand/700/1000;
+     crimson 300→900; emerald 300→1000; neon-lime. */
+  --text-heading:var(--neutral-light-1300);     /* #0C1927 — Display* and Heading* */
+  --text-body:var(--neutral-light-1100);        /* #243547 — Body* and running copy */
+  --text-default:var(--text-body);
+  --text-secondary:var(--neutral-light-900);    /* #40566D */
+  --text-tertiary:var(--neutral-light-500);     /* #90A5BB */
+  --text-disabled:var(--neutral-light-300);     /* #CBD5E2 */
+  --text-brand:var(--azure-brand);              /* #165FF2 */
+  --text-positive:var(--emerald-600);           /* #00A251 */
+  --text-negative:var(--crimson-600);           /* #D92D20 */
+  --text-inverse:var(--neutral-light-000);
+
+  /* Buttons. Allowed: neutralLight 700/900/1100/1300 + a25/a50/a100/a200;
+     azure 050/200/400/Brand/700/1000; neon-lime. */
+  --button-primary-bg:var(--azure-brand);       /* #165FF2 */
+  --button-primary-bg-hover:var(--azure-700);   /* #0E3FAA */
+  --button-primary-text:var(--neutral-light-000);
+  --button-secondary-bg:var(--azure-050);       /* #F4F8FF */
+  --button-secondary-border:var(--azure-200);   /* #B8D0FD */
+  --button-secondary-text:var(--azure-brand);
+  --button-neutral-bg:var(--neutral-light-a25); /* 6% */
+  --button-neutral-bg-hover:var(--neutral-light-a50);
+  --button-neutral-text:var(--neutral-light-900);
+  --button-disabled-bg:var(--neutral-light-a50);
+  --button-disabled-text:var(--neutral-light-700);
+
+  /* Chip / Badge / ActionButton — the marketing lockups. Solid neutral fill,
+     inverse label. Dark theme flips to a pale fill with dark text. */
+  /* Card — outlined in both themes. The card keeps a light surface in BOTH themes,
+     so its text/chip/media tokens are fixed rather than following the theme's text roles. */
+  --card-border:var(--neutral-light-300);       /* #CBD5E2 — default card border on light */
+  --card-surface:var(--neutral-light-000);      /* #FFFFFF */
+  --card-heading:var(--neutral-light-1300);     /* #0C1927 */
+  --card-body:var(--neutral-light-1100);        /* #243547 */
+  --card-eyebrow:var(--neutral-light-500);      /* #90A5BB */
+  --card-chip-bg:var(--neutral-light-100);      /* #F1F5FA */
+  --card-chip-text:var(--neutral-light-900);    /* #40566D */
+  --card-media:var(--neutral-light-300);        /* #CBD5E2 */
+
+  --chip-bg:var(--neutral-light-900);           /* #40566D */
+  --chip-text:var(--neutral-light-000);
+  --action-bg:var(--neutral-light-900);
+  --action-bg-hover:var(--neutral-light-1100);
+  --action-text:var(--neutral-light-000);
+  --action-shadow:0px 126.182px 35.331px 0px rgba(0,0,0,0), 0px 80.757px 32.807px 0px rgba(0,0,0,0.01), 0px 45.426px 27.760px 0px rgba(0,0,0,0.05), 0px 20.189px 20.189px 0px rgba(0,0,0,0.09), 0px 5.047px 10.095px 0px rgba(0,0,0,0.1);
+}
+
+:root[data-theme="dark"], .dark{
+  --bg-default:var(--neutral-light-1300);       /* #0C1927 */
+  --bg-subtle:#192839;
+  --bg-muted:var(--neutral-light-1100);         /* #243547 */
+  --bg-inverse:var(--neutral-light-000);
+  --bg-brand:var(--azure-brand);
+  --bg-brand-subtle:var(--azure-a100);
+
+  --container-default:#192839;
+  --container-subtle:var(--neutral-light-1100); /* #243547 */
+  --container-muted:var(--neutral-light-900);   /* #40566D */
+  --container-inverse:var(--neutral-light-000);
+  --container-brand:var(--azure-a100);
+  --container-positive:var(--emerald-a100);
+  --container-negative:var(--crimson-a100);
+
+  --border-subtle:rgba(227,234,243,0.12);
+  --border-muted:rgba(227,234,243,0.18);
+  --border-default:var(--neutral-light-400);    /* #B1C1D2 — dark-theme default border */
+  --border-strong:var(--neutral-light-500);     /* #90A5BB */
+  --border-inverse:var(--neutral-light-000);
+  --border-brand:var(--azure-400);              /* #5A8DF7 */
+  --border-brand-subtle:var(--azure-700);
+  --border-positive:var(--emerald-400);
+  --border-negative:var(--crimson-400);
+
+  --text-heading:var(--neutral-light-100);      /* #F1F5FA */
+  --text-body:var(--neutral-light-300);         /* #CBD5E2 */
+  --text-default:var(--text-body);
+  --text-secondary:var(--neutral-light-500);    /* #90A5BB */
+  --text-tertiary:var(--neutral-light-600);     /* #768EA7 */
+  --text-disabled:var(--neutral-light-700);
+  --text-brand:var(--azure-300);                /* #8AB1FB */
+  --text-positive:var(--emerald-400);
+  --text-negative:var(--crimson-400);
+  --text-inverse:var(--neutral-light-1300);
+
+  --button-primary-bg:var(--azure-brand);
+  --button-primary-bg-hover:var(--azure-400);
+  --button-primary-text:var(--neutral-light-000);
+  --button-secondary-bg:var(--azure-a100);
+  --button-secondary-border:var(--azure-400);
+  --button-secondary-text:var(--azure-300);
+  --button-neutral-bg:rgba(227,234,243,0.12);
+  --button-neutral-bg-hover:rgba(227,234,243,0.18);
+  --button-neutral-text:var(--neutral-light-300);
+  --button-disabled-bg:rgba(227,234,243,0.12);
+  --button-disabled-text:var(--neutral-light-700);
+
+  --card-border:var(--neutral-light-400);       /* #B1C1D2 — default card border on dark */
+  --card-surface:var(--neutral-light-200);      /* #E3EAF3 — card fill on dark */
+  --card-heading:var(--neutral-light-1300);     /* #0C1927 — stays dark; the card is pale */
+  --card-body:var(--neutral-light-1100);        /* #243547 */
+  --card-eyebrow:var(--neutral-light-700);      /* #6C849D */
+  --card-chip-bg:var(--neutral-light-100);      /* #F1F5FA */
+  --card-chip-text:var(--neutral-light-900);    /* #40566D */
+  --card-media:var(--neutral-light-400);        /* #B1C1D2 */
+
+  --chip-bg:var(--neutral-light-200);           /* #E3EAF3 */
+  --chip-text:var(--neutral-light-1300);
+  --action-bg:var(--neutral-light-200);
+  --action-bg-hover:var(--neutral-light-000);
+  --action-text:var(--neutral-light-1300);
+  --action-shadow:0px 126.182px 35.331px 0px rgba(0,0,0,0), 0px 80.757px 32.807px 0px rgba(0,0,0,0.02), 0px 45.426px 27.760px 0px rgba(0,0,0,0.10), 0px 20.189px 20.189px 0px rgba(0,0,0,0.18), 0px 5.047px 10.095px 0px rgba(0,0,0,0.20);
+}

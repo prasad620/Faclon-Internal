@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x300" name="Dark theme in use" subtitle="The same composition rendered light and dark — flip with the .dark scope" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>*{box-sizing:border-box}html,body{margin:0}body{margin:0;display:grid;grid-template-columns:1fr 1fr;min-height:300px;font-family:var(--font-body)}
+.pane{background:var(--bg-default);padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--container-default);border:1px solid var(--border-muted);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-low-raised)}
+.mode{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--text-tertiary)}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:12px;line-height:18px;color:var(--text-body)}
+.btn{height:28px;padding:0 14px;border:0;border-radius:10px;font-family:var(--font-body);font-size:12px;font-weight:600;background:var(--button-primary-bg);color:var(--button-primary-text)}
+.btn2{height:28px;padding:0 14px;border:1px solid var(--button-secondary-border);border-radius:10px;font-family:var(--font-body);font-size:12px;font-weight:600;background:var(--button-secondary-bg);color:var(--button-secondary-text)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px}
+</style></head><body>
+<div class="pane"><span class="mode">LIGHT</span>
+<div class="card">
+<div class="fl-heading-md" style="margin:0">Plant 3 — Line A</div>
+<p class="fl-body-sm" style="margin:0;color:var(--text-body)">Throughput is holding within tolerance across all four presses.</p>
+<div style="display:flex;gap:8px;margin-top:4px"><button class="btn">View</button><button class="btn2">Export</button></div>
+</div></div>
+<div class="pane dark" data-theme="dark"><span class="mode">DARK</span>
+<div class="card">
+<div class="fl-heading-md" style="margin:0">Plant 3 — Line A</div>
+<p class="fl-body-sm" style="margin:0;color:var(--text-body)">Throughput is holding within tolerance across all four presses.</p>
+<div style="display:flex;gap:8px;margin-top:4px"><button class="btn">View</button><button class="btn2">Export</button></div>
+</div></div>
+</body></html>

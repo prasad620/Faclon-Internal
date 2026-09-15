@@ -1,0 +1,8 @@
+/* Spatial tokens — theme.spacing.* from the Figma "layout" page. */
+:root{
+  --spacing-00:0px;--spacing-01:2px;--spacing-02:4px;--spacing-03:8px;--spacing-04:12px;
+  --spacing-05:16px;--spacing-06:20px;--spacing-07:24px;--spacing-08:32px;--spacing-09:40px;
+  --spacing-10:48px;--spacing-11:56px;
+  /* Icon sizes (Figma Variables: iconSize/*) */
+  --icon-xsmall:8px; /* @kind spacing */--icon-small:12px; /* @kind spacing */--icon-medium:16px; /* @kind spacing */--icon-large:20px; /* @kind spacing */--icon-xlarge:24px; /* @kind spacing */--icon-2xlarge:32px; /* @kind spacing */
+}

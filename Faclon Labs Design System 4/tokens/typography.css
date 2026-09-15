@@ -1,0 +1,103 @@
+/* Typography tokens — transcribed from the Figma "typography" page.
+   Values are NOT in the Figma Variables collections; they come from the
+   Type Scale / Font Size / Line Height / Weight / Spacing token tables. */
+/* ── TYPEFACE ROLES — strict ─────────────────────────────────────────
+   TASA Orbiter Display  → headers ONLY (Display* and Heading* styles).
+   Inter                 → body content ONLY (Body*, Caption*, Label*,
+                           UI chrome, tables, buttons, form fields).
+   Never set body copy in TASA Orbiter, and never set a heading in Inter.
+   Menlo is the mono face for token names and code values. */
+:root{
+  --font-display:"TASA Orbiter Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:Menlo,ui-monospace,SFMono-Regular,Consolas,monospace;
+
+  /* Role aliases — prefer these at the usage site so the rule reads in the code. */
+  --font-heading:var(--font-display);
+  --font-content:var(--font-body);
+
+  /* Global font-size scale */
+  --global-fz-10:10px;--global-fz-11:11px;--global-fz-12:12px;--global-fz-14:14px;--global-fz-16:16px;
+  --global-fz-18:18px;--global-fz-20:20px;--global-fz-24:24px;--global-fz-32:32px;--global-fz-34:34px;
+  --global-fz-36:36px;--global-fz-38:38px;--global-fz-40:40px;--global-fz-48:48px;--global-fz-56:56px;
+  --global-fz-64:64px;--global-fz-72:72px;
+
+  /* Global line-height scale */
+  --global-lh-00:0px;--global-lh-14:14px;--global-lh-16:16px;--global-lh-18:18px;--global-lh-20:20px;
+  --global-lh-22:22px;--global-lh-24:24px;--global-lh-26:26px;--global-lh-32:32px;--global-lh-38:38px;
+  --global-lh-40:40px;--global-lh-42:42px;--global-lh-46:46px;--global-lh-48:48px;--global-lh-56:56px;
+  --global-lh-64:64px;--global-lh-70:70px;--global-lh-78:78px;
+
+  /* Global font weights */
+  --global-fw-400:400; /* @kind font */
+  --global-fw-500:500; /* @kind font */
+  --global-fw-600:600; /* @kind font */
+  --global-fw-700:700; /* @kind font */
+
+  /* Global letter spacing */
+  --global-ls-condensed:-1%;--global-ls-normal:0%;
+  --letter-spacing-50:-0.01em;--letter-spacing-100:0em;
+
+  /* Paragraph + list spacing */
+  --global-ps-00:0px;--global-ps-08:8px;--global-ps-10:10px;--global-ps-11:11px;--global-ps-12:12px;
+  --global-lis-00:0px;--global-lis-08:8px;
+
+  /* ── Responsive type styles — DESKTOP (large screen) ── */
+  --display-large-size:64px;      --display-large-line:70px;
+  --display-medium-size:56px;     --display-medium-line:64px;
+  --display-small-size:48px;      --display-small-line:56px;
+  --heading-2xlarge-size:40px;    --heading-2xlarge-line:46px;
+  --heading-xlarge-size:32px;     --heading-xlarge-line:38px;
+  --heading-large-size:24px;      --heading-large-line:32px;
+  --heading-medium-size:20px;     --heading-medium-line:26px;
+  --heading-small-size:18px;      --heading-small-line:24px;
+  --body-large-size:16px;         --body-large-line:24px;   --body-large-paragraph:12px;
+  --body-medium-size:14px;        --body-medium-line:20px;  --body-medium-paragraph:11px;
+  --body-small-size:12px;         --body-small-line:18px;   --body-small-paragraph:10px;
+  --body-xsmall-size:10px;        --body-xsmall-line:14px;  --body-xsmall-paragraph:8px;
+  --caption-medium-size:11px;     --caption-medium-line:16px;
+  --label-medium-size:12px;       --label-medium-line:18px;
+  --label-small-size:10px;        --label-small-line:14px;
+
+  /* Eyebrow tracking — the wordmark's wide spaced-caps treatment. */
+  --eyebrow-tracking:0.18em;
+}
+
+/* ── RESTRICTED STYLES ───────────────────────────────────────────────
+   LabelSmall, LabelMedium and CaptionMedium are reserved for eyebrow
+   text and footers ONLY. Do not use them for body copy, UI labels,
+   table cells or captions under images — reach for Body* instead. */
+.fl-eyebrow{font-family:var(--font-body);font-size:var(--caption-medium-size);line-height:var(--caption-medium-line);font-weight:var(--global-fw-600);letter-spacing:var(--eyebrow-tracking);text-transform:uppercase}
+.fl-eyebrow-lg{font-family:var(--font-body);font-size:var(--label-medium-size);line-height:var(--label-medium-line);font-weight:var(--global-fw-700);letter-spacing:var(--eyebrow-tracking);text-transform:uppercase}
+.fl-eyebrow-sm{font-family:var(--font-body);font-size:var(--label-small-size);line-height:var(--label-small-line);font-weight:var(--global-fw-700);letter-spacing:var(--eyebrow-tracking);text-transform:uppercase}
+.fl-footer{font-family:var(--font-body);font-size:var(--label-small-size);line-height:var(--label-small-line);font-weight:var(--global-fw-400);color:var(--text-muted)}
+.fl-footer-lg{font-family:var(--font-body);font-size:var(--label-medium-size);line-height:var(--label-medium-line);font-weight:var(--global-fw-400);color:var(--text-muted)}
+/* ── Responsive type styles — MOBILE (360px – 767px) ── */
+@media (max-width:767px){
+  :root{
+    --display-large-size:38px;    --display-large-line:46px;
+    --display-medium-size:36px;   --display-medium-line:42px;
+    --display-small-size:34px;    --display-small-line:40px;
+    --heading-2xlarge-size:32px;  --heading-2xlarge-line:38px;
+    --heading-xlarge-size:24px;   --heading-xlarge-line:32px;
+    --heading-large-size:20px;    --heading-large-line:26px;
+    --heading-medium-size:18px;   --heading-medium-line:24px;
+    --heading-small-size:16px;    --heading-small-line:22px;
+  }
+}
+
+/* Header styles — TASA Orbiter Display, always. */
+.fl-display-lg{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--display-large-size);line-height:var(--display-large-line)}
+.fl-display-md{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--display-medium-size);line-height:var(--display-medium-line)}
+.fl-display-sm{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--display-small-size);line-height:var(--display-small-line)}
+.fl-heading-2xl{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--heading-2xlarge-size);line-height:var(--heading-2xlarge-line)}
+.fl-heading-xl{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--heading-xlarge-size);line-height:var(--heading-xlarge-line)}
+.fl-heading-lg{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--heading-large-size);line-height:var(--heading-large-line)}
+.fl-heading-md{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--heading-medium-size);line-height:var(--heading-medium-line)}
+.fl-heading-sm{font-family:var(--font-heading);color:var(--text-heading);font-weight:600;font-size:var(--heading-small-size);line-height:var(--heading-small-line)}
+
+/* Body styles — Inter, always. */
+.fl-body-lg{font-family:var(--font-content);color:var(--text-body);font-weight:400;font-size:var(--body-large-size);line-height:var(--body-large-line)}
+.fl-body-md{font-family:var(--font-content);color:var(--text-body);font-weight:400;font-size:var(--body-medium-size);line-height:var(--body-medium-line)}
+.fl-body-sm{font-family:var(--font-content);color:var(--text-body);font-weight:400;font-size:var(--body-small-size);line-height:var(--body-small-line)}
+.fl-body-xs{font-family:var(--font-content);color:var(--text-body);font-weight:400;font-size:var(--body-xsmall-size);line-height:var(--body-xsmall-line)}

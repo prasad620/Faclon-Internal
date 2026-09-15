@@ -1,0 +1,39 @@
+<!-- @dsCard group="Colors" viewport="700x360" name="Theme picker" subtitle="Light / Dark / System — flips every role token, persists across reloads" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>*{box-sizing:border-box}html,body{margin:0}body{min-height:360px;padding:22px 24px;font-family:var(--font-body);background:var(--bg-default);transition:background var(--duration-moderate) var(--ease-standard)}
+.card{background:var(--container-default);border:1px solid var(--border-muted);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-low-raised);max-width:360px}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:12px;line-height:18px;color:var(--text-body)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px}
+.btn{height:28px;padding:0 14px;border:0;border-radius:10px;font-family:var(--font-body);font-size:12px;font-weight:600;background:var(--button-primary-bg);color:var(--button-primary-text)}
+.btn2{height:28px;padding:0 14px;border:1px solid var(--button-secondary-border);border-radius:10px;font-family:var(--font-body);font-size:12px;font-weight:600;background:var(--button-secondary-bg);color:var(--button-secondary-text)}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { ThemeToggle } = window.FaclonLabsDesignSystem_4d0fff;
+function Demo(){
+  const [theme, setTheme] = React.useState('light');
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:18}}>
+      <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:16}}>
+        <div style={{display:'flex',flexDirection:'column',gap:2}}>
+          <span className="fl-eyebrow" style={{color:'var(--text-brand)'}}>Appearance</span>
+          <span className="fl-heading-md">Pick a theme</span>
+        </div>
+        <ThemeToggle value={theme} onChange={setTheme} persist={false} />
+      </div>
+      <div className="card">
+        <div className="fl-heading-sm" style={{margin:0}}>Plant 3 — Line A</div>
+        <p className="fl-body-sm" style={{margin:0,color:'var(--text-body)'}}>Throughput is holding within tolerance across all four presses.</p>
+        <div className="row"><span><span className="dot" style={{background:'var(--border-positive)'}}></span>Uptime</span><span style={{color:'var(--text-positive)',fontWeight:600}}>98.2%</span></div>
+        <div className="row" style={{paddingTop:8,borderTop:'1px solid var(--border-subtle)'}}><span><span className="dot" style={{background:'var(--border-negative)'}}></span>Faults</span><span style={{color:'var(--text-negative)',fontWeight:600}}>3</span></div>
+        <div style={{display:'flex',gap:8,marginTop:4}}><button className="btn">View</button><button className="btn2">Export</button></div>
+      </div>
+      <span className="fl-footer">Choice is stored in localStorage and reapplied on load. "System" follows prefers-color-scheme.</span>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>
